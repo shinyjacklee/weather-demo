@@ -6,7 +6,11 @@
       <image class='location-icon' src='/images/location-icon.png'> </image>
       <view class='location-text'>{{currentCity}}</view>
     </view>
-    <view class='location-tips'>{{locationtips}}</view>
+    <view wx:if="{{locationAuthType==0}}">点击获取当前位置</view>
+    <view wx:if="{{locationAuthType==1}}">点击开启位置权限</view>
+    <view wx:if="{{locationAuthType==2}}"></view>
+
+
   </button> 
   <view class="temp">{{nowTemp}}°</view>
   <view class="weather">{{nowWeather}}</view>
