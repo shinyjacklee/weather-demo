@@ -29,11 +29,10 @@
 <!--forecast list -->
 <scroll-view scroll-x>
   <view class='forecast-list'>
-    <view class='forecast-item' wx:for="{{hourlyWeather}}">
-      <view class='forecast-time'> {{item.time}}</view>
-
-      <image class='forecast-weather' src='{{item.iconPath}}'></image>
-      <view class='forecast-temp'>{{item.temp}}</view>
+    <view class='forecast-item' wx:for="{{hourlyWeather}}" wx:for-item="wi" wx:key='id'>
+      <view class='forecast-time'> {{wi.time}}</view>
+      <image class='forecast-weather' src='{{wi.iconPath}}'></image>
+      <view class='forecast-temp'>{{wi.temp}}</view>
     </view>
   </view>
 </scroll-view>

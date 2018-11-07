@@ -210,7 +210,6 @@ Page({
       fail: () => {
 
         this.setData({
-
           locationAuthType: UNAUTHORIZED
         })
 
