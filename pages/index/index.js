@@ -51,35 +51,63 @@ Page({
 
   },
 
-  onShow() {
-    console.log("-----indexpage;;;;onShow() ")
+  // onShow() {
+  //   console.log("-----indexpage;;;;onShow() ")
 
-    wx.getSetting({
-      success: res => {
-        let auth = res.authSetting['scope.userlocation']
+  //   wx.getSetting({
+  //     success: res => {
+  //       let auth = res.authSetting['scope.userlocation']
 
-        if (auth && this.data.locationAuthType != AUTHORIZED) {
-          this.setData({
-            locationAuthType: AUTHORIZED,
-            locationtips: AUTHORIZED_TIPS
-          })
+  //       if (auth && this.data.locationAuthType != AUTHORIZED) {
+  //         this.setData({
+  //           locationAuthType: AUTHORIZED,
+  //           locationtips: AUTHORIZED_TIPS
+  //         })
 
-          this.getLocation()
-        }
+  //         this.getLocation()
+  //       }
 
-      }
+  //     }
 
-    })
-
-
-
-  },
+  //   })
+  // },
 
   onLoad() {
     console.log("-----indexPage;;;;;onLoad() ")
     this.qqmapsdk = new QQMapWX({
       key: 'EAXBZ-33R3X-AA64F-7FIPQ-BY27J-5UF5B'
     })
+    wx.getSetting({
+      success: res => {
+
+        let auth = res.authSetting['scope.userLocation']
+        let locationAuthType = auth ? AUTHORIZED : (auth == false) ? UNAUTHORIZED : UNPROMPTED
+
+        let locationtips = auth ? AUTHORIZED_TIPS : (auth == false) ? UNAUTHORIZED_TIPS : UNPROMPTED_TIPS
+        this.setData({
+          locationtips: locationtips,
+          locationAuthType: locationAuthType
+        })
+
+        if (auth) {
+          this.getCityAndWeather()
+        } else {
+          this.getNow()
+        }
+
+
+
+      },
+      fail: () => {
+        this.getNow()
+      }
+
+
+
+    })
+
+
+
     this.getNow()
 
   },
@@ -156,9 +184,10 @@ Page({
     })
   },
   getTapLocation() {
-    this.getLocation()
+
+    this.getCityAndWeather()
   },
-  getLocation() {
+  getCityAndWeather() {
     wx.getLocation({
       success: res => {
         this.setData({
