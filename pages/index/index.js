@@ -81,9 +81,9 @@ Page({
       success: res => {
 
         let auth = res.authSetting['scope.userLocation']
-        let locationAuthType = auth ? AUTHORIZED : (auth == false) ? UNAUTHORIZED : UNPROMPTED
+        let locationAuthType = auth ? AUTHORIZED : (auth === false) ? UNAUTHORIZED : UNPROMPTED
 
-        let locationtips = auth ? AUTHORIZED_TIPS : (auth == false) ? UNAUTHORIZED_TIPS : UNPROMPTED_TIPS
+        let locationtips = auth ? AUTHORIZED_TIPS : (auth === false) ? UNAUTHORIZED_TIPS : UNPROMPTED_TIPS
         this.setData({
           locationtips: locationtips,
           locationAuthType: locationAuthType
