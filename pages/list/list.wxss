@@ -1,0 +1,47 @@
+/* pages/list/list.wxss */
+
+.date-item {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  align-items: center;
+  justify-content: space-between;
+  padding: 10rpx;
+  margin: 10rpx;
+}
+
+.date-item:last-child {
+  border-bottom: none;
+}
+
+.date-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.day {
+  font-size: 40rpx;
+  line-height: 56rpx;
+  opacity: 0.8;
+}
+
+.date {
+  font-size: 25rpx;
+  line-height: 35rpx;
+  color: gray;
+  opacity: 0.5;
+}
+
+.weather-icon {
+  width: 68rpx;
+  height: 68rpx;
+}
+
+.temp {
+  flex-grow: 1;
+  text-align: center;
+  opacity: 0.8;
+  font-size: 40rpx;
+  line-height: 56rpx;
+  align-content: center;
+}

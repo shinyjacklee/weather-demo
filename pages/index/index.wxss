@@ -1,0 +1,145 @@
+.temp {
+  font-size: 200rpx;
+  text-align: center;
+  line-height: 280rpx;
+}
+
+.weather {
+  text-align: center;
+}
+
+.weather-wrapper {
+  position: relative;
+  padding-top: 20rpx;
+  padding-bottom: 220rpx;
+}
+
+.weather-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.forecast-wrapper {
+  display: flex;
+  flex-direction: row;
+  padding: 15rpx;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.forecast-img {
+  width: 32rpx;
+  height: 28rpx;
+  margin-right: 10rpx;
+}
+
+.forecast-title {
+  font-size: 30rpx;
+  line-height: 42rpx;
+  color: gray;
+  opacity: 0.8;
+}
+
+.forecast-list {
+  display: flex;
+}
+
+.forecast-item {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 120rpx;
+  font-size: 36rpx;
+  line-height: 40rpx;
+  align-items: center;
+}
+
+.forecast-time {
+  font-size: 30rpx;
+  line-height: 42rpx;
+}
+
+.forecast-weather {
+  margin-top: 50rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.forecast-temp {
+  margin-top: 46rpx;
+  font-size: 40rpx;
+  line-height: 56rpx;
+}
+
+.dashline {
+  display: flex;
+  justify-content: center;
+}
+
+.day-weather {
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 40rpx;
+  right: 40rpx;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  opacity: 0.5;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.day-text {
+}
+
+.temp-text {
+  flex-grow: 1;
+  padding-right: 30rpx;
+  text-align: right;
+}
+
+.arrow-icon {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.location-wrapper {
+  margin-bottom: 60rpx;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  color: rgba(0, 0, 0, 0.5)!important;
+  border: none!important;
+  padding: 0!important;
+
+}
+
+.location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.location-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.location-icon {
+  margin-right: 10rpx;
+  width: 21rpx;
+  height: 30rpx;
+}
+
+.location-tips {
+  margin-top: 10rpx;
+  text-align: center;
+  height: 42rpx;
+}
